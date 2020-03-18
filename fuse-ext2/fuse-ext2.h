@@ -34,6 +34,22 @@
 #    include <sys/sysmacros.h>
 #endif
 
+#ifndef UTIME_NOW
+#define UTIME_NOW -1
+#endif
+
+#ifndef UTIME_OMIT
+#define UTIME_OMIT -2
+#endif
+
+#include <sys/_types.h>
+#include <sys/_types/_uuid_t.h>
+
+#ifndef _UUID_STRING_T
+#define _UUID_STRING_T
+typedef __darwin_uuid_string_t uuid_string_t;
+#endif /* _UUID_STRING_T */
+
 #include <fuse.h>
 #include <ext2fs/ext2fs.h>
 
